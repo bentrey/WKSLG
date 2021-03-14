@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--Default templates written 2/21/01 (v3: 11/6/18) by Ken Garson. (C) 2001-2021 Ken Garson. v2/1/21-->
+<!--playlist generator Written 10/20/00 by Ken Garson ( https://kenzodb.com ). Copyright (C) 2000-2020 Ken Garson. v2/22/21-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+<script type="text/javascript">
+document.domain="wfmu.org";
+</script>
+<base target="_top">
+<link rel="alternate" type="application/rss+xml" title="WFMU Playlists for Shakin' Street with Joe Belock" href="http://www.wfmu.org/playlistfeed/S7.xml">
+<link rel="alternate" type="application/rss+xml" title="WFMU MP3 archives for Shakin' Street with Joe Belock" href="http://www.wfmu.org/archivefeed/mp3/S7.xml">
+<link type="text/css" href="/libraries/jqueryui/1.12.1-dialogsmoothness/jquery-ui.min.css" rel="stylesheet" />
+<script type="text/javascript" src="/libraries/jquery/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/libraries/jquery/js.cookie.js"></script>
+<script type="text/javascript" src="/libraries/jqueryui/1.12.1-dialogsmoothness/jquery-ui.min.js"></script>
+<script src="https://use.fontawesome.com/f045e5a8bb.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Londrina+Solid" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/kenzodb_pcnf_comp.1601434521.js"></script>
+<script type="text/javascript">
+$(function(){
+KDBPComm.initialize('/pc.php?s=101501',7000,0,'/css/playlist_noframes.1582128507.css','/css/playlist_noframes_aftershow.1581636295.css');
+});
+</script>
+<script type="text/javascript" src="/js/kenzodb_pdrp_comp.1595038022.js"></script>
+<script type="text/javascript">
+$(function(){
+KDBPDrop.initialize('/ps.php?s=101501',7000,0,'{"artist":false,"song_title":false,"album_title":false,"record_label":false,"new_flag":false,"special_flag":false,"media":false,"comments":false,"year":false,"start_time":false,"image_favable":false,"live_timestamps_flag":false,"new_or_special_flag":false}');
+});
+</script>
+<script type="text/javascript" src="/libraries/highslide/highslide-v4.1.13.min.js"></script><script type="text/javascript" src="/libraries/highslide/highslide.config-v4.1.13.js"></script><link rel="stylesheet" type="text/css" href="/libraries/highslide/highslide-v4.1.13.css" />
+<style type="text/css">
+a.highslide img {
+max-width:335px;
+max-height:263px;
+display:inline-block;
+margin-left:auto;
+margin-right:auto;
+height:auto;
+width:auto;
+border-style:none;
+}
+div.highslide-caption {
+text-align:center;
+color: black;
+}
+div.image_caption {
+text-align:center;
+font-size: small;
+padding-left:12px;
+max-width:333px;
+}
+div.image_caption_top {
+text-align:center;
+font-size: small;
+}
+a.playlist_top_image img {
+/*max-width:800px;*/
+max-height:500px;
+max-width:95%;
+}
+span.KDBFavIcon img {
+display:inline-block;
+margin-left:auto;
+margin-right:auto;
+}
+</style>
+<link id="noframes_style" type="text/css" href="/css/playlist_noframes.1582128507.css" rel="stylesheet" />
+<script type="text/javascript">
+function accuflashlink(url, v) {
+window.open(url, "kdbflashplayerwindow",(v==1 ? "width=645,height=135":"width=540,height=164") + ",scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no");
+return false;
+}
+</script>
+<meta property="og:site_name" content="WFMU" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Shakin' Street with Joe Belock" />
+<meta property="og:description" content="Audio &amp; playlist from February 26, 2021" />
+<meta property="og:url" content="https://www.wfmu.org/playlists/shows/101501" />
+<title>
+WFMU:
+Shakin' Street with Joe Belock:
+Playlist
+from February 26, 2021
+</title>
+<style type="text/css" id="playlist_css_additional">
+BODY, TD, TH, .everything, P {
+color: #000000;
+font-family: verdana, geneva, arial, sans-serif;
+}
+.showlist {
+font-size: 80%;
+font-family: verdana, geneva, arial, sans-serif;
+}
+BODY {
+background-color: #99CCFF
+}
+A:link {color: #FF0000}
+A:visited {color: #333366}
+A:active {color: #FF3300}
+.invis {text-decoration: none}
+.webonly {
+font-style: italic;
+font-size: 70%;
+}
+.KDBFavIcon.KDBsong {
+float:right;
+margin-right: 5px;
+}
+.playlistcommentsform {
+font-size: 90%;
+margin:0;
+width:98%;
+}
+.topborder {
+/*border: 2px solid;*/
+}
+p.content, td.content {
+margin: 0;
+padding: 0.5em;
+}
+p.content div, td.content div {
+font-size: 120%;
+font-weight: bold;
+}
+p.boxed, td.boxed {
+border-top:1px solid silver;
+margin: 0.25em;
+padding: 0.25em 0.5em 0.55em 0.5em; /*pre-avatars*/
+/*padding: 0.15em 0.25em 0.15em 0.25em;*/ /*avatars*/
+}
+table#comments-table {
+border-spacing:0;
+border-collapse:collapse;
+font-size: 95%;
+border: 2px solid;
+line-height: 120%;
+table-layout:fixed;
+word-wrap:break-word;
+overflow:hidden;
+}
+.nounder {
+text-decoration: none;
+}
+span.key { font-weight: bold; }
+span.value { }
+div#playlistcommentstable {
+/*margin: 0.2em 4em;*/
+font-size: 90%;
+}
+div#playlistcommentstable_listonly {
+margin: 0.2em 0.2em;
+font-size: 90%;
+}
+span.rightmost {
+width:13.5em;
+float:right;
+text-align:right;
+font-size: 90%;
+}
+span.rightmost_live {
+width:11.9em;
+float:right;
+text-align:right;
+font-size: 90%;
+white-space: nowrap;
+}
+span.badges {
+font-size:180%;
+font-weight:bold;
+vertical-align:text-top;
+}
+textarea {
+font-family: verdana, geneva, arial, sans-serif;
+font-size: 100%;
+overflow-x: hidden; /*avoids firefox extra row*/
+}
+</style>
+<style type="text/css">
+.noDialogTitle .ui-dialog-titlebar {display:none}
+.ui-widget {
+font-size: 13px;
+}
+.ui-dialog .ui-dialog-content, .ui-widget-content a {
+padding: 0px;
+line-height:150%;
+font-weight: normal;
+color: black;
+}
+</style>
+<script type="text/javascript" src="/js/kenzodb_fav_comp.1598247358.js"></script>
+</head>
+<body>
+<div id="wrapper">
+<div class="songs">
+<div class="songs_except_comments" style="padding-right:5px">
+<div class="KDBFavPop"><div class="KDBFavPopMessage"></div></div>
+<script type="text/javascript">
+KDBFav.initialize({"myurl":"http:\/\/wfmu.org\/playlists\/shows\/101501","login":"\/auth.php?a=login&r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501","register":"\/auth.php?a=register&r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501","profile_favs":"\/auth.php?a=update_profile&panel_id=favorites&r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501","fav_icon_clicked":"\/auth.php?a=fav_icon_clicked&r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501","user_favs_base":"\/user_favs.php","song_page_base":"\/song.php","controller":"\/favcon.php","fav_unset_icon":"\/Gfx\/star_empty_2.png","fav_set_icon":"\/Gfx\/star_favorited_2.png","fav_busy_icon":"\/Gfx\/star_empty_spin.gif"},"playlist",101501);
+</script>
+<iframe src="/auth.php?a=iframe&amp;t=r&amp;cf=verdana%2C+geneva%2C+arial%2Csans-serif&amp;ct=&amp;cl=&amp;cv=&amp;ca=&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501"
+marginheight="0" frameborder="0" scrolling="no" id="kdb_login_iframe"
+width="100%"
+height="27"
+>
+<div align="right">
+<a href="http://www.wfmu.org/auth.php?a=login&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501" target="_top">Login/Logout</a> |
+<a href="http://www.wfmu.org/auth.php?a=register&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501" target="_top">Register</a> |
+Please enable inline frames!
+</div>
+</iframe>
+<script type="text/javascript">
+function kdb_login_iframeResize(id){
+var size_element; var e;
+try {
+size_element=document.getElementById(id).contentWindow.document.getElementById("kdb_login_text_size");
+document.getElementById(id).height= (size_element.clientHeight + 2) + "px";
+document.getElementById(id).width= (size_element.clientWidth + 17) + "px";
+} catch (e) {}
+}
+</script>
+<!--Generated by KenzoDB ( https://kenzodb.com ), (C) 2000-2021 Ken Garson-->
+<h2>
+<span class="KDBFavIcon KDBprogram" id="KDBprogram-S7">
+<a href="http://www.wfmu.org/auth.php?a=fav_icon_clicked&amp;type=program&amp;id=S7&amp;page_type=playlist&amp;page_id=101501&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501"
+onclick="KDBFav.fav_icon_clicked(event, this.parentNode);"
+title="Click for options"
+><img src="/Gfx/star_empty_2.png" border="0" alt="Options" /></a>
+</span>
+Shakin' Street with Joe Belock:
+Playlist
+from February 26, 2021
+<span class="KDBFavIcon KDBepisode" id="KDBepisode-101501">
+<a href="http://www.wfmu.org/auth.php?a=fav_icon_clicked&amp;type=episode&amp;id=101501&amp;page_type=playlist&amp;page_id=101501&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501"
+onclick="KDBFav.fav_icon_clicked(event, this.parentNode);"
+title="Click for options"
+><img src="/Gfx/star_empty_2.png" border="0" alt="Options" /></a>
+</span>
+</h2>
+<table style="table-layout:fixed">
+<tr>
+<td><img src="/Gfx/user_images/linsk_600212509619125_pd.jpg" width="30" height="30" align="left" border="2" alt="Joe Belock's avatar"/></td>
+<td valign="middle">
+<a href="http://www.wfmu.org/profile/277037073/Joe_Belock">View Joe Belock's profile</a>
+<span class="KDBFavIcon KDBuser" id="KDBuser-1">
+<a href="http://www.wfmu.org/auth.php?a=fav_icon_clicked&amp;type=user&amp;id=1&amp;page_type=playlist&amp;page_id=101501&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501"
+onclick="KDBFav.fav_icon_clicked(event, this.parentNode);"
+title="Click for options"
+><img src="/Gfx/star_empty_2.png" border="0" alt="Options" /></a>
+</span>
+</td>
+</tr>
+</table>
+<iframe src="https://pledge.wfmu.org/pledge-widget?program=S7&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501" width="100%" height="110" style="max-width:530px" frameborder="0"></iframe>
+<div class="everything">
+<p><font size="-1">
+<b>Shakin' Street - it's got that beat! It's got that sound! Join us each week on a trip across the rock-and-soul map, from Shakin' Street to McLemore Avenue, across 110th Street to Tobacco Road, motorvatin' down Highway 61 to 2120 South Michigan Avenue with wild sounds, both familiar and forgotten. Only on WFMU's new Rock 'n' Soul Radio stream!
+</b>
+</font></p>
+<div>
+<b>
+Fridays
+2 - 4pm
+(<span title="America/New_York (-05:00)">EST</span>)
+|
+On
+WFMU's
+<a href="https://wfmu.org/rocknsoulradio" title="More info">Rock'N'Soul Radio</a>
+<div style="margin-left: 20px; margin-top: 3px;">
+<font size="-1">
+Rock'N'Soul Radio LIVE Audio Streams
+(<a href="/audiostream.shtml">Get help</a>): &nbsp;
+<a href="http://www.radiorethink.com/tuner/?stationCode=wfmurnsi&amp;stream=hi" title="Listen"
+onclick="window.open(this.href,'kdbflashplayerwindow','width=425,height=800,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no'); return false;"
+>Pop-up</a>&nbsp; |&nbsp;
+<a href="/wfmu_rock.pls" title="Listen"
+>128k MP3</a>
+</font>
+</div>
+</b>
+</div>
+</div>
+<p>
+<font size="-1">
+<a href="/playlists/shows/101270">&lt;-- Previous playlist</a> |
+Back to <a href="/playlists/S7">
+Shakin' Street with Joe Belock playlists</a> |
+</font>
+</p>
+<hr size="3">
+<div class="everything">
+<p id="date_desc_archive_section">
+<span class="KDBFavIcon KDBepisode" id="KDBepisode-101501">
+<a href="http://www.wfmu.org/auth.php?a=fav_icon_clicked&amp;type=episode&amp;id=101501&amp;page_type=playlist&amp;page_id=101501&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501"
+onclick="KDBFav.fav_icon_clicked(event, this.parentNode);"
+title="Click for options"
+><img src="/Gfx/star_empty_2.png" border="0" alt="Options" /></a>
+</span>
+February 26, 2021
+<br>
+</p>
+<span id="now_playing_section">
+<span class="nowplayingtext">
+</span>
+<script type="text/javascript">
+if (typeof KDBCLSReload !== 'undefined')
+clearInterval(KDBCLSReload);
+</script>
+<noscript>
+(Reload this page, or enable scripting, to update the song info.)
+</noscript>
+</span>
+<span id="show_image_top_favables_section">
+</span>
+<p id="show_top_html"></p>
+</div>
+<span id="playlist_show_drops_section">
+<div class="everything">
+</div>
+<span id="songs">
+<table border="1" id="drop_table">
+<tr>
+<th style="display:none" class="song col_artist">Artist</th>
+<th style="display:none" class="song col_song_title">Track</th>
+<th style="display:none" class="song col_album_title">Album</th>
+<th style="display:none" class="song col_record_label">Label</th>
+<th style="display:none" class="song col_year">Year</th>
+<th style="display:none" class="song col_media">Format</th>
+<th style="display:none" class="song col_comments">Comments</th>
+<th style="display:none" class="song col_image_favable">Images</th>
+<th style="display:none" class="song col_new_or_special_flag"><font size="-2">
+Special</font></th>
+<th style="display:none" class="song col_live_timestamps_flag"><font size="-1">Approx. start time</font></th>
+</tr>
+</table>
+</span>
+</span>
+<div class="everything">
+<p align="center">Note: This playlist is still being updated.</p>
+<p id="show_bottom_html"></p>
+</div>
+</div> <!-- songs_except_comments 1 -->
+<div class="comments_reorder_wrapper">
+<div class="songs_except_comments" align="center">
+<div class="everything below_comments_reorder">
+<br>
+<font size="-1">
+<a href="/playlists/shows/101270">&lt;-- Previous playlist</a> |
+Back to <a href="/playlists/S7">
+Shakin' Street with Joe Belock playlists</a> |
+</font>
+<br><br>
+<font size="-1">
+<p>
+<span class="rsslinkstitle">RSS feeds<span class="rsslinksprogramtitle"> for Shakin' Street with Joe Belock</span>:</span>
+<span class="rsslinkslinks">
+<a href="/playlistfeed/S7.xml"><img src="/Gfx/feed-icon-14x14.png" border=0 height=14 width=14 alt="RSS">Playlists&nbsp;feed</a> | <a href="/archivefeed/mp3/S7.xml"><img src="/Gfx/feed-icon-14x14.png" border=0 height=14 width=14 alt="RSS">MP3&nbsp;archives&nbsp;feed</a>
+</span>
+</p>
+|
+<a href="/email.php?id=1&amp;return=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501">E-mail Joe Belock</a>
+| <a href="/playlists">Other WFMU Playlists</a> |
+<a href="/artistkeywords.php/S7">All artists played by Shakin' Street with Joe Belock</a> |
+</font>
+<hr>
+<font size="1">
+<a href="/audiostream.shtml" title="Broadcasting live on the net!">Listen&nbsp;on&nbsp;the&nbsp;Internet</a> |
+<a href="/reachout.html" title="Email lists for the entire staff, pledging and much more">Contact&nbsp;Us</a> |
+<a href="/onair.html" title="The meat of the matter">Music&nbsp;&amp;&nbsp;Programs</a> |
+<a href="/" title="WFMU Home Page">WFMU&nbsp;Home&nbsp;Page</a> |
+<a href="/marathon/" title="Support freeform radio">Support&nbsp;Us</a> |
+<a href="/faq.html" title="You got questions? We got answers!">FAQ</a><br><br>
+Live Audio Streams for Rock'n'Soul Radio:
+<a href="http://www.radiorethink.com/tuner/?stationCode=wfmurnsi&amp;stream=hi&amp;launchedFrom=chromeMessage" onclick="window.open(this.href,'kdbflashplayerwindow','width=425,height=800,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no'); return false;">Pop-up</a>
+|
+<a href="http://www.wfmu.org/wfmu_rock.pls"">128k MP3</a>
+<span class="navigation_other_more">
+&nbsp;&nbsp;&nbsp;(More streams:
+<a href="#" onclick="var x1=document.getElementsByClassName('navigation_other_streams'); var x2=document.getElementsByClassName('navigation_other_more'); for (var i=0; i<x1.length; i++) { x1[i].style.display='block'; x2[i].style.display='none';}; return false">[+]</a>)
+</span>
+<noscript>
+(Enable Javascript to see more streams!)
+</noscript>
+<div class="navigation_other_streams" style="display:none">
+WFMU:
+<a href="http://www.radiorethink.com/tuner/?stationCode=wfmu&amp;stream=hi&amp;launchedFrom=chromeMessage" onclick="window.open(this.href,'kdbflashplayerwindow','width=425,height=800,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no'); return false;">Pop-up</a>
+|
+<a href="http://www.wfmu.org/wfmu_aac.pls"">128k AAC</a>
+|
+<a href="http://www.wfmu.org/wfmu_mp3.pls"">128k MP3</a>
+|
+<a href="http://www.wfmu.org/wfmu32.pls"">32k MP3</a>
+<br>
+Give the Drummer Radio:
+<a href="http://www.radiorethink.com/tuner/?stationCode=wfmugtd&amp;stream=hi&amp;launchedFrom=chromeMessage" onclick="window.open(this.href,'kdbflashplayerwindow','width=425,height=800,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no'); return false;">Pop-up</a>
+|
+<a href="http://www.wfmu.org/wfmu_drummer.pls"">128k MP3</a>
+<br>
+Sheena's Jungle Room:
+<a href="http://www.radiorethink.com/tuner/?stationCode=wfmusjr&amp;stream=hi&amp;launchedFrom=chromeMessage" onclick="window.open(this.href,'kdbflashplayerwindow','width=425,height=800,scrollbars=no,resizable=yes,toolbar=no,directories=no,location=no,menubar=no,status=no'); return false;">Pop-up</a>
+|
+<a href="http://www.wfmu.org/sheena.pls"">128k MP3</a>
+<br>
+</div>
+<!--Generated by KenzoDB ( https://kenzodb.com ), (C) 2000-2020 Ken Garson-->
+</font>
+<hr>
+</div>
+</div> <!-- songs_except_comments 2 -->
+<div class="comments_reorder">
+<a name="comments"> </a>
+<br>
+<div class="comments" id="body">
+</div> <!-- .comments #body -->
+<div class="post" >
+<div id="playlistcommentstable">
+<noscript><div align="center"><b><i>Enable Javascript for more options!</b></div></noscript>
+<form action="https://www.wfmu.org/playlistcommentpost.php" method="post" id="comment_preview_form" target="_blank">
+<table border=0 align="center" class="playlistcommentsform everything" id="playlistcommentsform_outer">
+<tr valign="top">
+<td>
+<div align="center" style="white-space:nowrap"><b>Comment!</b>
+<span id="pc_login_logout_section" style="display:none">
+<iframe src="/auth.php?a=iframe&amp;t=i&amp;cf=verdana%2C+geneva%2C+arial%2Csans-serif&amp;ct=&amp;cl=&amp;cv=&amp;ca=&amp;sh=1&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501"
+marginheight="0" frameborder="0" scrolling="no" id="kdb_login_iframe"
+width="145"
+height="13"
+>
+<div align="right">
+<a href="http://www.wfmu.org/auth.php?a=login&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501" target="_top">Login/Logout</a> |
+<a href="http://www.wfmu.org/auth.php?a=register&amp;r=http%3A%2F%2Fwfmu.org%2Fplaylists%2Fshows%2F101501" target="_top">Register</a> |
+Please enable inline frames!
+</div>
+</iframe>
+<script type="text/javascript">
+function kdb_login_iframeResize(id){
+var size_element; var e;
+try {
+size_element=document.getElementById(id).contentWindow.document.getElementById("kdb_login_text_size");
+document.getElementById(id).height= (size_element.clientHeight + 2) + "px";
+document.getElementById(id).width= (size_element.clientWidth + 17) + "px";
+} catch (e) {}
+}
+</script>
+<!--Generated by KenzoDB ( https://kenzodb.com ), (C) 2000-2021 Ken Garson-->
+</span>
+</div>
+<table border=0 align="center" class="playlistcommentsform everything" width="100%">
+<tr><td rowspan="3" valign="top"><span id="avatar_image"></span>
+</td></tr>
+<tr>
+<td align="center" style="white-space:nowrap; display:flex">
+<div id="name_section" style="width:50%; display:inline-block">
+<span id="pc_name_label">Name</span>
+<input type="text" name="a" id="pc_name" size="20" maxlength="50" style="width:70%" placeholder="Name">
+</div>
+<div id="email_section" style="width:50%; display:inline-block">
+<span title="Optional, not public" id="pc_email_label">Email</span>
+<input type="text" name="b" id="pc_email" size="20" maxlength="50" style="width:70%" placeholder="Email (optional)" title="Optional, not public">
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="3" align="center"><textarea name="c" id="ccc" rows="3" style="width:100%" cols="50" wrap="soft" placeholder="Your comment"></textarea></td>
+</tr>
+</table>
+<div style="width:100%; white-space:nowrap">
+<div id="footer-songs-link" class="is-live" style="float:left; /*width:140px*/">
+<span class="songs_return_link"><a href="#" onclick="KDBPComm.view_switch('songs')">To songs</a></span>
+</div>
+<div style="margin:0 auto" align="center">
+<input type="submit" name="d" value="Post comment!">
+<input type="hidden" name="e" value="52310a3800645b620f385136">
+</div>
+</div>
+</td></tr>
+</table>
+</form>
+<script type="text/javascript">
+KDBcommentmain_handlemessage = function(ev) {
+switch (ev['data']) {
+case 'clear':
+$('#ccc').val('');
+break;
+case 'reload':
+setTimeout(function() {
+KDBPComm.reloadCommentsSection();
+}, 5000);
+}
+};
+if (window.addEventListener) {
+window.addEventListener('message', KDBcommentmain_handlemessage, false);
+} else if (window.attachEvent) {
+window.attachEvent('onmessage', KDBcommentmain_handlemessage);
+};
+var comment_preview_form = document.getElementById('comment_preview_form');
+comment_preview_form.onsubmit = function(e) {
+var w = window.open('about:blank','comment_preview_popup','toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=400,height=280,left='+($('.songs').width())+',top='+($(parent.document).height()-280));
+this.target = 'comment_preview_popup';
+};
+if (isNaN(Cookies.get('kdb_pc_name')))
+$('#pc_name').val(Cookies.get('kdb_pc_name'));
+if (isNaN(Cookies.get('kdb_pc_email')))
+$('#pc_email').val(Cookies.get('kdb_pc_email'));
+$.ajax({
+url: '/auth.php?a=ls',
+dataType: 'json',
+success: function(data) {
+if (data != null && data.lin) {
+$('#email_section').remove();
+$('#pc_name').val(data.pn);
+$('#avatar_image').html(data.ahc);
+/*$('#pc_name').attr('size', 30);*/
+$('#name_section').css('width', '100%');
+} else {
+$('#pc_login_logout_section').css('display', 'inline');
+}
+}
+});
+</script>
+</div>
+</div> <!-- .post -->
+</div> <!-- .comments_reorder -->
+</div> <!--. comments_reorder_wrapper-->
+<div class="songs_except_comments" style="margin-right:6px">
+<div class="everything" align="right">
+<h6>(C) 2021 WFMU.
+Generated by <strong><a href="https://kenzodb.com/" style="text-decoration:none" target="_blank">KenzoDB</a></strong>, (C) 2000-2021 <a href="https://kenzodb.com/contact" target="_blank">Ken Garson</a>
+</h6>
+<br>
+</div>
+<script type="text/javascript">function highslide_attach(selector_prefix = ""){jQuery(selector_prefix + " a.highslide").attr("onclick", "return hs.expand(this)").not("[title]").attr("title", "Click to enlarge");}highslide_attach();</script><!-- async google analytics code MA 2011-02-25 -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-446006-1']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<div class="layout-sm-md">
+<div id="footer-comments-link" class="is-live" onclick="KDBPComm.view_switch('comments');">
+<i class="fa fa-comments" aria-hidden="true"></i>
+<span>
+<span class="live-indicator">To Comments!</span>
+</span>
+</div>
+</div>
+</div> <!-- songs_except_comments 3 -->
+</div> <!-- .songs -->
+</div> <!--wrapper-->
+</body>
+</html>
