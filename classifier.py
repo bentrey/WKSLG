@@ -26,9 +26,9 @@ def classifier(rewrite=False):
     directory = 'D:/library/'
     w = os.walk(directory)
     folders = next(w)[1]
-    for folder in folders[:1]:
+    for folder in folders:
         songs = os.listdir(directory+folder)
-        for song_name in songs[:2]:
+        for song_name in songs:
             if not song_name in list(df['name']):
                 print(song_name)
                 new_row = []
