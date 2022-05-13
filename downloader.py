@@ -1,5 +1,6 @@
 from googlesearch import search
 from spotipy.oauth2 import SpotifyClientCredentials
+from youtubesearchpython import VideosSearch
 import spotipy
 import os
 import random
@@ -37,7 +38,7 @@ def get_views(artist, song, dir="library"):
         ydl_opts = {'quite':True, 'no_warnings':True, 'format': 'bestaudio/best', 'postprocessors': \
                    [{'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp3', 'preferredquality'\
                    : '192',}],'noplaylist':True, 'outtmpl': path + '/'+artist+' - '+song+'.%(ext)s',\
-                   'ignoreerrors':True}
+                   'ignoreerrors':True, 'cookies':'youtube.com_cookies.txt'}
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             entries = ydl.extract_info(f"ytsearch:{artist} {song}", download=False)
             song_total_views = 0
@@ -68,8 +69,11 @@ def title_tester(title, term):
         okay = False
     return okay
 
-def wfmu_downloader(times,includes=None, max_views=2*10**4):
+def wfmu_downloader(times,includes=None, max_views=2*10**4, back=0):
     wfmu_playlists = os.listdir('wfmu_html')
+    if back != 0:
+        wfmu_playlists.sort()
+        wfmu_playlists = wfmu_playlists[-back:]
     for n in range(times):
         file_name = random.choice(wfmu_playlists)
         print(file_name)
@@ -178,3 +182,52 @@ def library_downloader(trials):
         except:
             time.sleep(100)
 
+def youtube_downloader(numberOfSongs, dir="library"):
+    for n in range(numberOfSongs):
+        try:
+            title = np.random.choice(os.listdir('library/rotation/'))
+            artist = title.split("-")[0]
+            videosSearch = VideosSearch(artist, limit = 10)
+            choice = np.random.choice(videosSearch.result()['result'])
+            title = choice['title']
+            duration = choice['duration']
+            times = duration.split(':')
+            if len(times) == 2:
+                if int(times[0]) < 20:
+                    artist = title.split("-")[0]
+                    song = "-".join(title.split("-"))
+                    get_file(artist, song)
+            elif len(times) == 1:
+                artist = title.split("-")[0]
+                song = "-".join(title.split("-"))
+                get_file(artist, song)
+        except:
+            pass
+
+def spotify_crawler(n):
+    files = os.listdir(path + '/rotation')
+    temp_files = []
+    for file in files:
+        if not (file.split('-')[0].lower(), True) in temp_files:
+            temp_files.append((file.split('-')[0].lower(), True))
+        else :
+            temp_files.append((file.split('-')[0].lower(), False))
+    files = []
+    for file in temp_files:
+        if file[1]:
+            files.append(file[0])
+    cid = credentials.cid
+    secret = credentials.secret
+    client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
+    spotify = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
+    for n in range(n):
+        try:
+            artist = np.random.choice(files)
+            artist_string = spotify.search(artist)['tracks']['items'][0]['artists'][0]['external_urls']['spotify'].split('/')[-1]
+            artist_uri = 'spotify:artist:'+artist_string
+            results = spotify.artist_albums(artist_uri, album_type='album')
+            album_string = results['items'][0]['external_urls']['spotify'].split('/')[-1]
+            print(artist)
+            spotify_album_downloader(album_string)
+        except:
+            pass
