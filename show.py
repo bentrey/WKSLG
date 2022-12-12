@@ -11,15 +11,19 @@ from pydub.playback import play
 #ch1 bubbling
 #ch2 music
 #ch3 dj
+# desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'OneDrive')\
+# .replace("\\","/")+ "/Desktop"
+# #desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')\
+# #.replace("\\","/")
 
-file = open('WKSLG_DJ.txt').readlines()
+file = open('WKSLG_DJ.txt').readlines() # local text file for show names
 file = [line for line in file if ',' in line]
 show_names = {int(line.split(',')[0]): line.split(', ')[-1][:-2] + ' with ' \
              + line.split('(')[1].split(',')[0] for line in file}
 
-ssl._create_default_https_context = ssl._create_unverified_context
-
+ssl._create_default_https_context = ssl._create_unverified_context 
 def block_print():
+    # Maybe doesn't work 
     sys.stdout = open(os.devnull, 'w')
 
 def enable_print():
@@ -36,6 +40,7 @@ def fade_out(sound):
         time.sleep(0.3)
 
 def song_remover(artist,songs):
+    # removes songs if they have already been played during a show (so duplicate songs don't get played)
     return_list = []
     for song in songs:
         if not artist in song:
@@ -43,9 +48,11 @@ def song_remover(artist,songs):
     return return_list
 
 def christmasCheck(song_name):
-    if datetime.now().month == 12:
+    # Filters christmas music
+    if datetime.now().month == 12: # if december, return False
         return False
-    elif'christmas' in song_name.lower() or 'jingle bell' in song_name.lower()\
+        # if not decemeber, and christmas return true
+    elif'christmas' in song_name.lower() or 'jingle bell' in song_name.lower() \
         or 'silent night' in song_name.lower():
             return True
     else:
@@ -54,24 +61,24 @@ def christmasCheck(song_name):
 
 def show_starter(show,channels,recovery):
     ch1, ch2, ch3, ch4 = channels
-    #getting the folder name
-    for folder_name in os.listdir('/utils/connectors'):
+    #getting the folder name (for closer show?)
+    for folder_name in os.listdir('utils/connectors'):
         if '_' in folder_name:
             if str((show-1)%84) == folder_name.split('_')[0]:
                 folder = folder_name
     #getting closer if recovering
     if not recovery:
-        closer = pygame.mixer.Sound('/utils/connectors/'+folder+'/opener/closer.mp3')
+        closer = pygame.mixer.Sound('utils/connectors/'+folder+'/opener/closer.mp3')
     else: 
-        file = random.choice(os.listdir('/utils/connectors/'+folder+'/dj/'))
-        closer = pygame.mixer.Sound('/utils/connectors/'+folder+'/dj/'+file)
+        file = random.choice(os.listdir('utils/connectors/'+folder+'/dj/'))
+        closer = pygame.mixer.Sound('utils/connectors/'+folder+'/dj/'+file)
     #playing closer
     start_closer_time = time.time()
     ch3.play(closer,fade_ms=1000)
     fade_in(ch3)
     fade_out(ch1)
-    #finding folder name for next show
-    for folder_name in os.listdir('/utils/connectors'):
+    #finding folder name for next show (thats why %84 in get closer, it gets the previous show?)
+    for folder_name in os.listdir('utils/connectors'):
         if '_' in folder_name:
             if str(show) == folder_name.split('_')[0]:
                 folder = folder_name
@@ -91,31 +98,38 @@ def show_starter(show,channels,recovery):
             time.sleep(1)
     fade_out(ch3)
     #playing next show opener
-    opener = pygame.mixer.Sound('/utils/connectors/'+folder+'/opener/opener.mp3')
+    opener = pygame.mixer.Sound('utils/connectors/'+folder+'/opener/opener.mp3')
     start_opener_time = time.time()
     ch3.play(opener,fade_ms=1000)
     fade_in(ch3)
     fade_out(ch1)
     #getting next closer length
-    next_closer = pygame.mixer.Sound('/utils/connectors/'+folder+'/opener/closer.mp3')
+    next_closer = pygame.mixer.Sound('utils/connectors/'+folder+'/opener/closer.mp3')
     end_file_length = next_closer.get_length()
+
+
     #get songs for next show
     songs = get_songs_for_genre(show,1000)
     bulk_songs = get_songs_for_genre(show,2000,0)
     #find first song
     song_number = random.randint(0,len(songs)-1)
     song_name = songs.pop(song_number)
+    artist = song_name.split('-')[0]
+
     #checking views of first song, block print stops youtube_dl from printing warnings
     block_print()
-    song_views, artist_views = get_views(song_name.split('-')[0],song_name.split('-')[1])
+
+    song_views, artist_views = 0,0 #get_views(song_name.split('-')[0],song_name.split('-')[1])
     enable_print()
     songs = song_remover(song_name.split('-')[0],songs)
+
     #getting a new song if the views are too high
-    while song_views > 2*10**4 or artist_views > 10**6 or christmasCheck(song_name):
+    while song_views > 2*10**4 or artist_views > 10**6 \
+    or christmasCheck(song_name) and artist != 'CBSRMT ':
         song_number = random.randint(0,len(songs)-1)
         song_name = songs.pop(song_number)
         block_print()
-        song_views, artist_views = get_views(song_name.split('-')[0],song_name.split('-')[1])
+        song_views, artist_views = 0, 0 #get_views(song_name.split('-')[0],song_name.split('-')[1])
         enable_print()
         songs = song_remover(song_name.split('-')[0],songs)
         bulk_songs = song_remover(song_name.split('-')[0],bulk_songs)
@@ -164,30 +178,42 @@ def show_dj(show,channels):
                         folder = folder_name
             file_name = random.choice(dj_file_names)
             sound = pygame.mixer.Sound('/utils/connectors/'+folder+'/dj/'+file_name)
-            fade_out(ch1)
-            ch3.play(sound)
-            fade_in(ch3)
-            time.sleep(max([sound.get_length()-4,0]))
+            transition()
+            # fade_out(ch1)
+            # ch3.play(sound)
+            # fade_in(ch3)
+            # time.sleep(max([sound.get_length()-4,0]))
         elif random.random() < min([len(all_shows_file_names)/120,0.5]):
             file_name = random.choice(all_shows_file_names)
             sound = pygame.mixer.Sound('/utils/connectors/all_shows/'+file_name)
-            fade_out(ch1)
-            ch3.play(sound)
-            fade_in(ch3)
-            time.sleep(max([sound.get_length()-4,0]))
+            transition()
+            # fade_out(ch1)
+            # ch3.play(sound)
+            # fade_in(ch3)
+            # time.sleep(max([sound.get_length()-4,0]))
         elif random.random() < min([len(all_shows_file_names)/120,0.5]):
             file_name = random.choice(all_shows_sounds_file_names)
             sound = pygame.mixer.Sound('/utils/connectors/all_shows_sounds/'+file_name)
+            transition()
+            # fade_out(ch1)
+            # ch3.play(sound)
+            # fade_in(ch3)
+            # time.sleep(max([sound.get_length()-4,0]))
+        
+        def transition():
             fade_out(ch1)
             ch3.play(sound)
             fade_in(ch3)
-            time.sleep(max([sound.get_length()-4,0]))
+            time.sleep([sound.get_length()-4,0])
     except:
         pass
     fade_out(ch3)
     fade_in(ch1)
 
 def next_shows(artist):
+    '''
+    find the shows the artist will be playing live
+    '''
     try:
         #getting the artist page from songkick
         search_artist = artist.replace(' ','+').lower()
@@ -213,6 +239,9 @@ def next_shows(artist):
         return ''
 
 def get_artist_social(artist):
+    '''
+    get social media, if any, for the artist
+    '''
     try:
         #getting the artist page from discogs
         search_artist = artist.replace(' ','+').lower()
@@ -231,14 +260,33 @@ def get_artist_social(artist):
         return ""
 
 def shows(channels,recovery=False):
+
+    # ----------- ADDING SHAWN FUNCTIONS
+    def print_song_and_artist_info(show_names, song_name):
+        """
+        Displays name of Song, artist, and social media presence
+        """
+        print("Working from function")
+        print('\n',show_names[show],'\n',html.unescape(song_name[:-4]))
+        band_socials_string = get_artist_social(song_name.split('-')[0])
+        next_shows_string = next_shows(song_name.split('-')[0])
+        if len(next_shows_string)>0 and len(band_socials_string) == 0:
+            print('\n',html.unescape(next_shows_string))
+        elif len(next_shows_string)==0 and len(band_socials_string)>0:
+            print('\n',band_socials_string,'\n\n')
+        elif len(next_shows_string)>0 and len(band_socials_string)>0:
+            print('\n',band_socials_string,'\n\n',html.unescape(next_shows_string))
+
+    print("At start of shows function")
     ch1, ch2, ch3, ch4 = channels
-    bubbling = pygame.mixer.Sound('/utils/background/Bubbling.mp3')
+    # bubbling = pygame.mixer.Sound('/utils/background/Bubbling.mp3')
     old_show = -1
     show = -1
     end_file_length = 0
-    ch1.play(bubbling, loops=-1)
+    # ch1.play(bubbling, loops=-1)
     fade_in(ch1)
     while True:
+        print("In show loop")
         try:
             #getting the current hour of the week
             hour = ((time.time()+end_file_length)%604800//3600-79)%168
@@ -254,20 +302,17 @@ def shows(channels,recovery=False):
                 else:
                     return True
             old_show = show
-            song = pygame.mixer.Sound('/library/rotation/'+song_name)
+
+            # song = pygame.mixer.Sound('/library/rotation/'+song_name)
+            song = pygame.mixer.Sound('./library/rotation/ROGER MILLER - CHUG A LUG.mp3')
+
             #set volume
             start_song_time = time.time()
             ch2.play(song,fade_ms=1000)
-            #printing show name, song, artist, next shows, social links
-            print('\n',show_names[show],'\n',html.unescape(song_name[:-4]))
-            band_socials_string = get_artist_social(song_name.split('-')[0])
-            next_shows_string = next_shows(song_name.split('-')[0])
-            if len(next_shows_string)>0 and len(band_socials_string) == 0:
-                print('\n',html.unescape(next_shows_string))
-            elif len(next_shows_string)==0 and len(band_socials_string)>0:
-                print('\n',band_socials_string,'\n\n')
-            elif len(next_shows_string)>0 and len(band_socials_string)>0:
-                print('\n',band_socials_string,'\n\n',html.unescape(next_shows_string))
+
+            #printing show name, song, artist, next shows, social links 
+            print_song_and_artist_info(show_names, song_name) # Moved into function
+
             #turning off bubbles
             fade_out(ch1)
             #getting the next song.

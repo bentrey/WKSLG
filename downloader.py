@@ -12,6 +12,7 @@ import numpy as np
 path = 'library'
 
 def get_file(artist, song, dir="library", max_views=2*10**4):
+    path = 'library/rotation' # shawn added this so songs get added to rotation folder instead of just library
     index = 0
     term = artist + ' ' + song
     #urls = google_search(term)
@@ -25,11 +26,14 @@ def get_file(artist, song, dir="library", max_views=2*10**4):
             total_views += entries['entries'][n]['view_count']
         url = entries['entries'][0]['webpage_url']
         if total_views<max_views:
+            # print("TOTAL VIEWS", total_views)
             ydl.extract_info(url)
         else:
             print('Too many views')
 
+
 def get_views(artist, song, dir="library"):
+
     try:
         index = 0
         term = artist + ' ' + song

@@ -107,7 +107,8 @@ def get_genres(rewrite=False,google=False):
 
 def get_songs_for_genre(label,number_of_songs,alpha=0.05):
     #opening songs.cvs, giving label to songs in two locations
-    df = pd.read_csv('safesongs.csv')
+    # alpha = probability a song is actually part of the show
+    df = pd.read_csv('songs.csv')
     songs = []
     for folder in os.listdir('library'):
         if str(label) == folder.split('_')[0]:
