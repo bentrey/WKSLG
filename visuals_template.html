@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      body{
+        background-image: url('utils/gifs/AnnMargret_hot_dance_with_Elvis_Presley_in_Viva_Las_Vegas_4.gif');
+        background-size:100%;
+        background-attachment: fixed;
+        height:100%;
+        width:100%;
+        background-position: center;
+        filter: blur(2px);
+        backdrop-filter: blur(1px);
+      }
+    </style>
+    <link href="http://fonts.cdnfonts.com/css/kabel" rel="stylesheet">
+    <script type="text/javascript">
+      const listOfGifs = <listOfGifs>
+      function run(){
+        var fileName = "";
+        fileName = listOfGifs[Math.floor(Math.random()*listOfGifs.length)];
+        document.body.style.backgroundImage = "url('utils/gifs/"+fileName+"')";
+        window.setTimeout(function(){ document.location.reload(true); }, 15000);
+        //setTimeout(run,15000)
+        //document.getElementById("target").innerHTML = "ran";
+        //document.body.style.backgroundImage = "url('utils/gifs/AnnMargret_hot_dance_with_Elvis_Presley_in_Viva_Las_Vegas_4 (1).gif')";
+      }
+    </script>
+  </head>
+  <body onload="run()" style="background-color:Black;">
+    <p id="target" style="text-shadow: -4px 4px black; font-family: 'Kabel', sans-serif; font-size:25; color:white;position: fixed; bottom: 0; text-align: left">artist-song<br>dj-show</p>
+  </body>
+</html>

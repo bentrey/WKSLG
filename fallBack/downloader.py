@@ -13,7 +13,6 @@ import numpy as np
 path = 'library'
 
 def get_file(artist, song, dir="library", max_views=2*10**4):
-    path = 'library/rotation' # shawn added this so songs get added to rotation folder instead of just library
     index = 0
     term = artist + ' ' + song
     #urls = google_search(term)
@@ -27,14 +26,11 @@ def get_file(artist, song, dir="library", max_views=2*10**4):
             total_views += entries['entries'][n]['view_count']
         url = entries['entries'][0]['webpage_url']
         if total_views<max_views:
-            # print("TOTAL VIEWS", total_views)
             ydl.extract_info(url)
         else:
             print('Too many views')
 
-
 def get_views(artist, song, dir="library"):
-
     try:
         index = 0
         term = artist + ' ' + song
@@ -235,3 +231,25 @@ def spotify_crawler(n):
             spotify_album_downloader(album_string)
         except:
             pass
+
+def spotify_playlists_downloader():
+    file = open('utils/downloader/playlist_ids.txt','r')
+    playlist_ids = file.read().split('\n')
+    file.close()
+    while len(playlist_ids)>0:
+        file = open('utils/downloader/playlist_ids.txt','r')
+        playlist_ids = file.read().split('\n')
+        print(file.read())
+        file.close()
+        id = playlist_ids.pop()
+        try:
+            spotify_playlist_downloader(id)
+        except:
+            print('Failed to download playlist', id)
+        try:
+            spotify_album_downloader(id)
+        except:
+            print('Failed to download album', id)
+        file = open('utils/downloader/playlist_ids.txt','w')
+        file.write('\n'.join(playlist_ids))
+        file.close()

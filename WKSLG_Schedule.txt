@@ -1,0 +1,97 @@
+Sunday
+0,0-2 Trip Hop (Massive Attack, DJ Shadow)
+1,2-4 Lo-fi (Nujabes)
+2,4-6 Funk R&B (Prince)
+3,6-8 Modern Blues (Otis Taylor)
+4,8-10 Gospel Country
+5,10-12 Russian Punk (Pussyriot)
+6,12-14 Classic Hip Hop (Ultramagnetic MCs)
+7,14-16 Alternative Hip-Hop (Tribe Called Quest)
+8,16-18 Neo-Soul(The Roots, D'Angelo)
+9,18-20 Wu-Tang Style Hip-Hop (Wu-Tang, MF DOOM) 
+10,20-22 Radio Mystery
+11,22-24 Beat Jazz
+
+Monday
+12,0-2 Melodic Viking Metal (Wintersun)
+13,2-4 Nu-Metal (like, Limp Bizkit 3 Dollar Bill Y'all)
+14,4-6 Sign-off (Star Spangled Banner, Marines Hymn)
+15,6-8 Unknown 50s (Peanut Wilson) Moody Street Irregulars
+16,8-10 Late 2000's Indie Rock (aka 'Pitchfork's Greatest Hits')
+17,10-12 Garage (Kinks)
+18,12-14 Classic Country (Roger Miller)
+19,14-16 Folk Rock (Neil Young)
+20,16-18 Clean 80s Hardcore (Effiges)
+21,18-20 Think Pink (Pink Floyd, psychadelic)
+22,20-22 90s Hardcore Rap (Nas, Mobb Deep, DMX)
+23,22-24 Sci-Fi Hip Hop (Deltron)
+
+Tuesday
+24,0-2 90s Ska
+25,2-4 Skatepunk
+26,4-6 Ambient (Brian Eno)
+27,6-8 Glam Rock (David Bowie, T.Rex)
+28,8-10 Funk
+29,10-12 R&B/Soul (Otis Redding, Sam Cooke)
+30,12-14 Corridos Hip-Hop
+31,14-16 Corridos
+32,16-18 Classic Garage (Ricky Nelson)
+33,18-20 Stoner Metal
+34,20-22 Post Punk (Joy Division)
+35,22-24 Proto Punk
+
+Wednesday
+36,0-2 Novelty Hip Hop (Riff Raff)
+37,2-4 Post Hardcore
+38,4-6 80s
+39,6-8 2000s R&B (So So Def)
+40,8-10 SNES Era VG Music (16 Bit Jams!)
+41,10-12 Known Grunge (Alice in Chains)
+42,12-14 Unknown Grunge (Hard ons)
+43,14-16 International Psycadelic (Allah Wakbar/Cambodian)
+44,16-18 Psycadelic Revival (Brian Jones Town)
+45,18-20 Classic Alternative (Rem Harborcoat/Mike Lupica)
+46,20-22 Garage (Noisey)
+47,22-24 Garage Punk
+
+Thursday
+48,0-2 Mannie Fresh Era Hip Hop
+49,2-4 2000's Pop Rap (Jay-Z)
+50,4-6 Big Band (Glenn Miller)
+51,6-8 Lounge (Frank Sinatra)
+52,8-10 Bossa Nova
+53,10-12 Country Punk (Hank III/David Allan Coe)
+54,12-14 Shoegaze 
+55,14-16 Chinese Pop (9mm88)
+56,16-18 Funk
+57,18-20 Jpop
+58,20-22 City Pop (Classic Jpop)
+59,22-24 Soviet Pop (kiryushah — танцуют все)
+
+Friday
+60,0-2 Shread Metal
+61,2-4 Southern Stoner Metal (Exhorder)
+62,4-6 80s Metal (Ozzy, Iron Maiden)
+63,6-8 Synth
+64,8-10 Dark Wave 
+65,10-12 Blood Machines Hour (Carpenter Brut)
+66,12-14 Pop Punk (MXPX/Fenix TX, Pre 2005)
+67,14-16 'Outsider' Music (Hasil Adkins, Abner Jay)
+68,16-18 Soviet Hipster Punk (НОЙЗ / НА НОЖАХ)
+69,18-20 60s Garage (Pretty Things)
+70,20-22 Proto Alternative (Old Bowie)
+71,22-24 Hipster Punk (Parquet Courts)
+
+Saturday
+72,0-2 Middle of the Night Desert Music
+73,2-4 Kpop
+74,4-6 New Wave (Human League, Psychedelic Furs)
+75,6-8 80s Dance-Rock (David Bowie)
+76,8-10 New Jack Swing (Cameo, Bobby Brown)
+77,10-12 60s Night at the Pops (Enoch Light Orcastra)
+78,12-14 Prog Rock (Rush)
+79,14-16 Latin Scorsesse (Sergio Mendes)
+80,16-18 2010s Garage Punk (Ty Segall)
+81,18-20 2010s alternative (Late Beck/Radiohead Rainbow)
+82,20-22 Art-Rock (Talking Heads, Modern Lovers)
+83,22-24 Classic Reggae (Max Romeo)
